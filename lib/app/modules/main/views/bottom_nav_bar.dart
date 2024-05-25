@@ -75,7 +75,8 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
 
   List<BottomNavItem> _getNavItems() {
     return MenuCode.values
-        .map((e) => e.toBottomNavItem(appLocalization))
-        .toList();
+        .map(
+          (e) => e.toBottomNavItem(appLocalization),
+        ).toList();
   }
 }
