@@ -3,7 +3,11 @@ import '/app/data/model/github_project_search_response.dart';
 
 abstract class GithubRemoteDataSource {
   Future<GithubProjectSearchResponse> searchGithubProject(
-      GithubSearchQueryParam queryParam);
+    GithubSearchQueryParam queryParam,
+  );
 
-  Future<Item> getGithubProjectDetails(String userName, String repositoryName);
+  Future<Item> getGithubProjectDetails(
+    String userName,
+    String repositoryName,
+  );
 }

@@ -10,7 +10,8 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
     implements GithubRemoteDataSource {
   @override
   Future<GithubProjectSearchResponse> searchGithubProject(
-      GithubSearchQueryParam queryParam) {
+    GithubSearchQueryParam queryParam,
+  ) {
     var endpoint = "${DioProvider.baseUrl}/search/repositories";
     var dioCall = dioClient.get(endpoint, queryParameters: queryParam.toJson());
 
@@ -23,7 +24,10 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
   }
 
   @override
-  Future<Item> getGithubProjectDetails(String userName, String repositoryName) {
+  Future<Item> getGithubProjectDetails(
+    String userName,
+    String repositoryName,
+  ) {
     var endpoint = "${DioProvider.baseUrl}/repos/$userName/$repositoryName";
     var dioCall = dioClient.get(endpoint);
 
@@ -36,11 +40,14 @@ class GithubRemoteDataSourceImpl extends BaseRemoteSource
   }
 
   GithubProjectSearchResponse _parseGithubProjectSearchResponse(
-      Response<dynamic> response) {
+    Response<dynamic> response,
+  ) {
     return GithubProjectSearchResponse.fromJson(response.data);
   }
 
-  Item _parseGithubProjectResponse(Response<dynamic> response) {
+  Item _parseGithubProjectResponse(
+    Response<dynamic> response,
+  ) {
     return Item.fromJson(response.data);
   }
 }

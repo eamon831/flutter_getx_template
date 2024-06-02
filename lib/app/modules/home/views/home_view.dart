@@ -42,8 +42,11 @@ class HomeView extends BaseView<HomeController> {
 
               return ItemGithubProject(dataModel: model);
             },
-            separatorBuilder: (BuildContext context, int index) =>
-                const SizedBox(height: AppValues.smallMargin),
+            separatorBuilder: (BuildContext context, int index) {
+              return const SizedBox(
+                height: AppValues.smallMargin,
+              );
+            },
           ),
         ),
       ),

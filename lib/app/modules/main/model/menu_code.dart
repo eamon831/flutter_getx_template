@@ -14,14 +14,16 @@ extension MenuCodeExtensions on MenuCode {
         );
       case MenuCode.FAVORITE:
         return BottomNavItem(
-            navTitle: appLocalization.bottomNavFavorite,
-            iconSvgName: "ic_favorite.svg",
-            menuCode: MenuCode.FAVORITE);
+          navTitle: appLocalization.bottomNavFavorite,
+          iconSvgName: "ic_favorite.svg",
+          menuCode: MenuCode.FAVORITE,
+        );
       case MenuCode.SETTINGS:
         return BottomNavItem(
-            navTitle: appLocalization.bottomNavSettings,
-            iconSvgName: "ic_settings.svg",
-            menuCode: MenuCode.SETTINGS);
+          navTitle: appLocalization.bottomNavSettings,
+          iconSvgName: "ic_settings.svg",
+          menuCode: MenuCode.SETTINGS,
+        );
     }
   }
 }

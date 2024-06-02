@@ -1,9 +1,0 @@
-.
-├── app
-├── backup-whateverfolder-2024-05-25.txt
-├── flavors
-├── l10n
-├── main_dev.dart
-└── main_prod.dart
-
-4 directories, 3 files

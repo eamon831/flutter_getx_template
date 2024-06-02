@@ -8,14 +8,16 @@ import '/app/data/repository/github_repository.dart';
 import '/app/modules/home/model/github_project_ui_data.dart';
 
 class HomeController extends BaseController {
-  final GithubRepository _repository =
-      Get.find(tag: (GithubRepository).toString());
+  final GithubRepository _repository = Get.find(
+    tag: (GithubRepository).toString(),
+  );
 
   final RxList<GithubProjectUiData> _githubProjectListController =
       RxList.empty();
 
-  List<GithubProjectUiData> get projectList =>
-      _githubProjectListController.toList();
+  List<GithubProjectUiData> get projectList {
+    return _githubProjectListController.toList();
+  }
 
   final pagingController = PagingController<GithubProjectUiData>();
 
@@ -30,6 +32,9 @@ class HomeController extends BaseController {
     );
 
     var githubRepoSearchService = _repository.searchProject(queryParam);
+
+    logger.t("Product List Service: $githubRepoSearchService");
+
 
     callDataService(
       githubRepoSearchService,

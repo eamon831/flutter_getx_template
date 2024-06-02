@@ -10,9 +10,13 @@ class GithubProjectSearchResponse {
     incompleteResults = json['incomplete_results'];
     if (json['items'] != null) {
       items = [];
-      json['items'].forEach((v) {
-        items?.add(Item.fromJson(v));
-      });
+      json['items'].forEach(
+        (v) {
+          items?.add(
+            Item.fromJson(v),
+          );
+        },
+      );
     }
   }
 
